@@ -1,4 +1,5 @@
 //clustering
+//ab for benchmarking, loaded in Mac
 process.env.UV_THREADPOOL_SIZE = 1;
 
 const cluster = require('cluster');
@@ -10,14 +11,6 @@ const PORT = process.env.PORT || 5000;
 if (cluster.isMaster) {
   cluster.fork();
   cluster.fork();
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
 } else {
   app.get('/', (req, res, next) => {
     crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
@@ -25,9 +18,6 @@ if (cluster.isMaster) {
     });
   });
   app.listen(PORT, () => {
-    console.log(
-      `Server is running on port ${PORT} `,
-      process.env.UV_THREADPOOL_SIZE
-    );
+    console.log(`Server is running on port ${PORT} `);
   });
 }
