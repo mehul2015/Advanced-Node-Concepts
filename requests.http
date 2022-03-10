@@ -1,4 +1,9 @@
+
+###Get Capsules
+
 GET  http://localhost:5000/capsules
+
+### Get Rockets
 
 GET http://localhost:5000/rockets
 
