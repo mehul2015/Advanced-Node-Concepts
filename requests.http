@@ -1,0 +1,10 @@
+GET  http://localhost:5000/capsules
+
+GET http://localhost:5000/rockets
+
+
+
+
+
+
+
